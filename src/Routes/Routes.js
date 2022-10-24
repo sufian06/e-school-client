@@ -7,14 +7,14 @@ import Home from "../Pages/Home/Home/Home";
 
 export const routes = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <Main />,
     children: [
-      {path: '/', element: <Home />},
-      {path: '/home', element: <Home />},
-      {path: '/courses', element: <Courses />},
-      {path: '/faq', element: <FAQ />},
-      {path: '/blog', element: <Blog />},
-    ]
-  }
-])
+      { path: "/", element: <Home /> },
+      { path: "/home", element: <Home /> },
+      { path: "/courses", element: <Courses />, loader: () => fetch('http://localhost:5000/courses') },
+      { path: "/faq", element: <FAQ /> },
+      { path: "/blog", element: <Blog /> },
+    ],
+  },
+]);
