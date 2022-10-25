@@ -38,3 +38,33 @@
   text-decoration: none;
   display: block;
 }
+.loginRegister {
+  display: flex;
+  gap: 5px;
+  position: relative;
+}
+.loginRegister::after {
+  content: "";
+  background: #ff5722;
+  height: 20px;
+  width: 2px;
+  right: 67px;
+  top: 3px;
+  position: absolute;
+  transform: rotate(20deg);
+}
+.btn-logout {
+  background: #ff5722;
+  border: none;
+  font-size: 1.125rem;
+  font-weight: 500;
+  display: inline-block;
+  cursor: pointer;
+  padding: 7px 15px;
+  border-radius: 5px;
+  color: #fff;
+  transition: 0.3s;
+}
+.btn-logout:hover {
+  background: #e04a1c;
+}
