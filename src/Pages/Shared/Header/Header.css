@@ -25,6 +25,7 @@
 .mainNav ul {
   list-style: none;
   display: flex;
+  transition: 0.6s ease-in-out;
 }
 .mainNav ul li {
   margin-left: 1.25rem;
@@ -67,4 +68,29 @@
 }
 .btn-logout:hover {
   background: #e04a1c;
+}
+
+.mobileMenu {
+  font-size: 1.125rem;
+  cursor: pointer;
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .top {
+    top: 75px;
+    right: 0;
+  }
+  .top-2 {
+    top: -1000px;
+    right: 0;
+  }
+  .mobileMenu {
+    display: block;
+  }
+  .mainNav ul {
+    flex-direction: column;
+    position: absolute;
+    background-color: lightblue;
+    width: 100%;
+  }
 }
