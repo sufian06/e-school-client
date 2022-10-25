@@ -10,7 +10,7 @@
 }
 .courseLink {
   text-decoration: none;
-  border: 1px solid gray;
+  border: 1px solid goldenrod;
   margin-bottom: 15px;
   display: block;
   padding: 10px;
@@ -20,8 +20,9 @@
   color: goldenrod;
   font-size: 1.5rem;
   letter-spacing: 1px;
+  transition: 0.3s;
 }
 .courseLink:hover {
-  border-color: goldenrod;
+  border-color: red;
   color: red;
 }
