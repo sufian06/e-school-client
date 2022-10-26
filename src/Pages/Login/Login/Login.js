@@ -1,13 +1,14 @@
-import { GoogleAuthProvider } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import React, { useContext } from "react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
-import './Login.css';
+import "./Login.css";
 
 const Login = () => {
   const { signIn, providerLogin } = useContext(AuthContext);
   const googleProvider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -36,12 +37,21 @@ const Login = () => {
 
   const handleGoogleSignIn = () => {
     providerLogin(googleProvider)
-    .then(result => {
-      const user = result.user;
-      console.log(user)
-    })
-    .catch(error => console.error(error))
-  }
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => console.error(error));
+  };
+
+  const handleGithubSignIn = () => {
+    providerLogin(githubProvider)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => console.error(error));
+  };
 
   return (
     <div className="container">
@@ -68,8 +78,12 @@ const Login = () => {
         </p>
       </form>
       <div className="provider-login">
-        <button onClick={handleGoogleSignIn}><FaGoogle /> Login with Google</button>
-        <button><FaGithub /> Login with Github</button>
+        <button onClick={handleGoogleSignIn}>
+          <FaGoogle /> Login with Google
+        </button>
+        <button onClick={handleGithubSignIn}>
+          <FaGithub /> Login with Github
+        </button>
       </div>
     </div>
   );

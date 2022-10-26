@@ -1,0 +1,12 @@
+.question {
+  border: 1px solid gray;
+  border-radius: 7px;
+  margin-top: 20px;
+  padding: 15px;
+}
+.question h4 {
+  margin-bottom: 7px;
+}
+.question span {
+  margin-right: 7px;
+}

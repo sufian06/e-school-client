@@ -33,6 +33,7 @@
 .btn-card a {
   text-decoration: none;
   transition: 0.3s;
+  color: #ff5722;
 }
 .btn-card:hover {
   background-color: #ff5722;
