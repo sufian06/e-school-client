@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Card.css';
 
-const Card = ({course, handleItemClick}) => {
+const Card = ({course}) => {
   const {name, img, title} = course;
   return (
     <div className='card'>

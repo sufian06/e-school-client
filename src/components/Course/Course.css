@@ -45,14 +45,24 @@
   margin-top: 20px;
   padding: 10px;
   background-color: #ff5722;
-  color: #fff;
   font-size: 1.125rem;
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.3s;
+}
+.btn-course a {
+  color: #fff;
+  text-decoration: none;
   transition: 0.3s;
 }
 .btn-course:hover {
   color: #ff5722;
   border-color: #ff5722;
   background: transparent;
+}
+.btn-course:hover a {
+  color: #ff5722;
+}
+.view {
+  min-height: 75vh;
 }

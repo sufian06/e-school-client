@@ -6,15 +6,12 @@ import './Courses.css';
 const Courses = () => {
   const courses = useLoaderData();
   
-  const handleItemClick = () => {
-    console.log('clicked')
-  }
   return (
     <div className="container">
       <div className="coursesContainer">
         <div className="courses">
           {
-            courses.map(course => <Card key={course.id} handleItemClick={handleItemClick} course={course} />)
+            courses.map(course => <Card key={course.id} course={course} />)
           }
         </div>
         <div className="coursesItem">

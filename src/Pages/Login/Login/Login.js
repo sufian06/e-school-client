@@ -1,11 +1,12 @@
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
 import "./Login.css";
 
 const Login = () => {
+  const [error, setError] = useState('');
   const { signIn, providerLogin } = useContext(AuthContext);
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
@@ -26,12 +27,14 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         form.reset();
+        setError('');
         if (user) {
           navigate(from, { replace: true });
         }
       })
       .catch((error) => {
         console.error(error);
+        setError(error.message);
       });
   };
 
@@ -40,6 +43,9 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        if (user) {
+          navigate(from, { replace: true });
+        }
       })
       .catch((error) => console.error(error));
   };
@@ -49,6 +55,9 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        if (user) {
+          navigate(from, { replace: true });
+        }
       })
       .catch((error) => console.error(error));
   };
@@ -70,6 +79,7 @@ const Login = () => {
             />
           </div>
         </div>
+        <p className="auth-error">{error}</p>
         <button type="submit" className="btn-submit">
           Login
         </button>

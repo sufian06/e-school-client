@@ -57,12 +57,16 @@
   cursor: pointer;
   transition: 0.3s;
   font-size: 1.125rem;
+  margin-top: 7px;
 }
 .loginRegister {
   display: flex;
 }
 .border-none {
   border: none !important;
+}
+.mainNav ul li:hover.no-bg {
+  background: transparent;
 }
 .btn-logout {
   background: #ff5722;
@@ -75,11 +79,35 @@
   border-radius: 5px;
   color: #fff;
   transition: 0.3s;
+  margin-left: 15px;
 }
 .btn-logout:hover {
   background: #e04a1c;
 }
-
+.user-info {
+  position: relative;
+  width: 100px;
+  display: flex;
+  align-items: center;
+}
+.user-url {
+  height: 40px;
+  width: 40px;
+  margin-left: 15px;
+  border-radius: 50%;
+  border: 1px solid #ff5722;
+  padding: 3px;
+  margin-top: 5px;
+}
+.user-name {
+  position: absolute;
+  right: 15px;
+  bottom: -15px;
+  display: none;
+}
+.user-info:hover .user-name {
+  display: block;
+}
 .mobileMenu {
   font-size: 1.125rem;
   cursor: pointer;
@@ -105,5 +133,13 @@
     position: absolute;
     background-color: lightblue;
     width: 100%;
+  }
+  .mainNav ul li {
+    margin-left: 0;
+    margin-bottom: 15px;
+  }
+  .dark {
+    margin-left: -15px;
+    margin-top: 15px;
   }
 }

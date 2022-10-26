@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
 import "./Register.css";
 
 const Register = () => {
+  const [error, setError] = useState("");
   const { createUser } = useContext(AuthContext);
 
   const handleSubmit = (event) => {
@@ -20,9 +21,11 @@ const Register = () => {
         const user = result.user;
         console.log(user);
         form.reset();
+        setError("");
       })
       .catch((error) => {
         console.error(error);
+        setError(error.message);
       });
   };
 
@@ -32,7 +35,7 @@ const Register = () => {
         <div className="formInner">
           <div className="singleInput">
             <label htmlFor="">Your Name</label>
-            <input type="text" name="name" placeholder="Enter Name" />
+            <input type="text" name="name" placeholder="Enter Name" required />
           </div>
           <div className="singleInput">
             <label htmlFor="">Photo URL</label>
@@ -40,7 +43,7 @@ const Register = () => {
           </div>
           <div className="singleInput">
             <label htmlFor="">Your Email</label>
-            <input type="email" name="email" placeholder="Your Email" />
+            <input type="email" name="email" placeholder="Your Email" required />
           </div>
           <div className="singleInput">
             <label htmlFor="">Password</label>
@@ -48,10 +51,14 @@ const Register = () => {
               type="password"
               name="password"
               placeholder="Enter Password"
+              required
             />
           </div>
         </div>
-        <button type="submit" className="btn-submit">Register</button>
+        <p className="auth-error">{error}</p>
+        <button type="submit" className="btn-submit">
+          Register
+        </button>
         <p className="infoText">
           Already have an account? <Link to="/login">Login</Link>
         </p>

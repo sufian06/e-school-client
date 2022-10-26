@@ -20,3 +20,8 @@
   color: #fff;
   border-color: transparent;
 }
+.auth-error {
+  color: #ff5722;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
