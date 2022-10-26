@@ -31,9 +31,6 @@ const Header = () => {
         <div className="navBar">
           <ul className={`${open ? 'top' : 'top-2'}`}>
             <li>
-              <Link to="/home">Home</Link>
-            </li>
-            <li>
               <Link to="/courses">Courses</Link>
             </li>
             <li>

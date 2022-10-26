@@ -1,14 +1,18 @@
+import { GoogleAuthProvider } from "firebase/auth";
 import React, { useContext } from "react";
+import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
+import './Login.css';
 
 const Login = () => {
-  const {signIn} = useContext(AuthContext);
+  const { signIn, providerLogin } = useContext(AuthContext);
+  const googleProvider = new GoogleAuthProvider();
 
   const navigate = useNavigate();
   const location = useLocation();
 
-  const from = location.state?.from?.pathname || '/';
+  const from = location.state?.from?.pathname || "/";
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -17,18 +21,27 @@ const Login = () => {
     const password = form.password.value;
 
     signIn(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        form.reset();
+        if (user) {
+          navigate(from, { replace: true });
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  const handleGoogleSignIn = () => {
+    providerLogin(googleProvider)
     .then(result => {
       const user = result.user;
-      console.log(user);
-      form.reset();
-      if(user) {
-        navigate(from, {replace: true});
-      }
+      console.log(user)
     })
-    .catch(error => {
-      console.error(error);
-    })
-  };
+    .catch(error => console.error(error))
+  }
 
   return (
     <div className="container">
@@ -54,6 +67,10 @@ const Login = () => {
           Already have an account? <Link to="/register">Register</Link>
         </p>
       </form>
+      <div className="provider-login">
+        <button onClick={handleGoogleSignIn}><FaGoogle /> Login with Google</button>
+        <button><FaGithub /> Login with Github</button>
+      </div>
     </div>
   );
 };
