@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
-import { FaBars, FaLaptop, FaTimes } from "react-icons/fa";
+import { FaBars, FaLaptop, FaMoon, FaSun, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
 import "./Header.css";
 
 const Header = () => {
+  const [dark, setDark] = useState(false);
   let [open, setOpen] = useState(false);
   const { user, logOut } = useContext(AuthContext);
 
@@ -29,7 +30,7 @@ const Header = () => {
           </Link>
         </div>
         <div className="navBar">
-          <ul className={`${open ? 'top' : 'top-2'}`}>
+          <ul className={`${open ? "top" : "top-2"}`}>
             <li>
               <Link to="/courses">Courses</Link>
             </li>
@@ -51,14 +52,30 @@ const Header = () => {
                 ) : (
                   <div className="loginRegister">
                     <Link to="/login">Login</Link>
-                    <Link className="btn-register" to="/register">Register</Link>
+                    <Link className="btn-register" to="/register">
+                      Register
+                    </Link>
                   </div>
                 )}
               </>
             </li>
+            <li className="dark">
+          {dark ? (
+            <FaSun onClick={() => setDark(!dark)} />
+          ) : (
+            <FaMoon onClick={() => setDark(!dark)} />
+          )}
+        </li>
           </ul>
         </div>
-        <div className="mobileMenu">{open ? <FaTimes onClick={() => setOpen(!open)} /> : <FaBars onClick={() => setOpen(!open)} />}</div>
+        
+        <div className="mobileMenu">
+          {open ? (
+            <FaTimes onClick={() => setOpen(!open)} />
+          ) : (
+            <FaBars onClick={() => setOpen(!open)} />
+          )}
+        </div>
       </div>
     </nav>
   );

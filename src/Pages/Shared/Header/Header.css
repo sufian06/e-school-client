@@ -40,6 +40,10 @@
   text-decoration: none;
   display: block;
 }
+.dark {
+  cursor: pointer;
+  transition: 0.3s;
+}
 .loginRegister {
   display: flex;
   gap: 20px;
