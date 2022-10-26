@@ -40,7 +40,7 @@ const Header = () => {
             <li>
               <Link to="/blog">Blog</Link>
             </li>
-            <li>
+            <>
               <>
                 {user?.uid ? (
                   <>
@@ -51,24 +51,26 @@ const Header = () => {
                   </>
                 ) : (
                   <div className="loginRegister">
-                    <Link to="/login">Login</Link>
+                    <li><Link to="/login">Login</Link></li>
+                    <li>
                     <Link className="btn-register" to="/register">
                       Register
                     </Link>
+                    </li>
                   </div>
                 )}
               </>
+            </>
+            <li className="dark border-none">
+              {dark ? (
+                <FaSun onClick={() => setDark(!dark)} />
+              ) : (
+                <FaMoon onClick={() => setDark(!dark)} />
+              )}
             </li>
-            <li className="dark">
-          {dark ? (
-            <FaSun onClick={() => setDark(!dark)} />
-          ) : (
-            <FaMoon onClick={() => setDark(!dark)} />
-          )}
-        </li>
           </ul>
         </div>
-        
+
         <div className="mobileMenu">
           {open ? (
             <FaTimes onClick={() => setOpen(!open)} />

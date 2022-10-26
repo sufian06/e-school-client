@@ -11,7 +11,6 @@ const Courses = () => {
   }
   return (
     <div className="container">
-      <h1>Courses: {courses.length}</h1>
       <div className="coursesContainer">
         <div className="courses">
           {
