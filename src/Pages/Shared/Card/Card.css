@@ -8,4 +8,35 @@
   height: 200px;
   border-radius: 10px;
   object-fit: cover;
+  margin: 12px 0;
+}
+.title {
+  font-weight: 500;
+  margin-bottom: 12px;
+  margin-top: 7px;
+}
+.btn-card {
+  display: block;
+  color: #ff5722;
+  border: 1px solid #ff5722;
+  padding: 7px 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: transparent;
+  border-radius: 5px;
+  width: 100%;
+  cursor: pointer;
+  transition: 0.3s;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+.btn-card a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+.btn-card:hover {
+  background-color: #ff5722;
+}
+.btn-card:hover a {
+  color: white;
 }

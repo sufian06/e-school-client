@@ -5,17 +5,20 @@ import './Courses.css';
 
 const Courses = () => {
   const courses = useLoaderData();
-  console.log(courses);
+  
+  const handleItemClick = () => {
+    console.log('clicked')
+  }
   return (
     <div className="container">
       <h1>Courses: {courses.length}</h1>
       <div className="coursesContainer">
         <div className="courses">
           {
-            courses.map(course => <Card key={course.id} course={course} />)
+            courses.map(course => <Card key={course.id} handleItemClick={handleItemClick} course={course} />)
           }
         </div>
-        <div>
+        <div className="coursesItem">
           {courses.map((course) => (
             <p key={course.id}>
               <Link className="courseLink" to={`/course/${course.name}`}>{course.name}</Link>

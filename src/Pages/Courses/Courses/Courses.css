@@ -10,19 +10,47 @@
 }
 .courseLink {
   text-decoration: none;
-  border: 1px solid goldenrod;
+  border: 1px solid #ff5722;
   margin-bottom: 15px;
   display: block;
   padding: 10px;
   font-weight: 500;
   text-align: center;
   border-radius: 4px;
-  color: goldenrod;
+  color: #ff5722;
   font-size: 1.5rem;
   letter-spacing: 1px;
   transition: 0.3s;
 }
 .courseLink:hover {
-  border-color: red;
-  color: red;
+  border-color: transparent;
+  color: white;
+  background-color: #ff5722;
+}
+
+/* responsive */
+@media only screen and (max-width: 992px) {
+  .courses {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .coursesContainer {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .courses {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .coursesItem {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .courses {
+    grid-template-columns: 1fr;
+  }
 }
