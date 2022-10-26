@@ -1,0 +1,35 @@
+.error-page {
+  display: flex;
+  align-items: center;
+  padding: 4rem;
+  background-color: rgb(243 244 246);
+  color: rgb(17 24 39);
+  height: 100vh;
+}
+.error-page-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  margin: 2rem auto;
+}
+.svg {
+  width: 10rem;
+  height: 10rem;
+}
+.error-text {
+  margin-left: 2rem;
+}
+.error-title {
+  margin-bottom: 1.5rem;
+}
+.error-text p {
+  font-weight: 600;
+}
+.error-btn {
+  margin-top: 1.5rem;
+  display: block;
+  text-decoration: none;
+}
