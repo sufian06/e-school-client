@@ -6,7 +6,6 @@ const CheckOut = () => {
   const checkoutData = useLoaderData();
   const { name } = checkoutData;
   const { user } = useContext(AuthContext);
-  console.log(user)
   return (
     <div className="container">
       <div className="view tac">
