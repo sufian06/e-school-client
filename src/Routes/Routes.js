@@ -43,8 +43,8 @@ export const routes = createBrowserRouter([
             <CheckOut />
           </PrivateRoute>
         ),
-        // loader: ({ params }) =>
-        //   fetch(`https://e-school-server.vercel.app/course/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`https://e-school-server.vercel.app/checkout/${params.id}`),
       },
     ],
   },

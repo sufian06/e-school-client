@@ -7,7 +7,6 @@ import "./Course.css";
 const Course = () => {
   const course = useLoaderData();
   const { id, name, title, img, description, classes, times } = course;
-  console.log(course);
   const ref = React.createRef();
 
   return (
