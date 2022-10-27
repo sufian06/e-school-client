@@ -4,16 +4,15 @@ import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
 const CheckOut = () => {
   const checkoutData = useLoaderData();
-  const { id, name, title, img, description, classes, times } = checkoutData;
-  console.log(checkoutData);
+  const { name } = checkoutData;
   const { user } = useContext(AuthContext);
+  console.log(user)
   return (
     <div className="container">
-      <div className="view">
-        <h2>Thank you for be the premium user.</h2>
-        <h4>{user.displayName}</h4>
+      <div className="view tac">
+        <h4>User name: <span className="c-name">{user.displayName}</span></h4>
         <p>{user.email}</p>
-        <h1>{name}</h1>
+        <h1 className="mt-1">Course Name: <span className="c-name">{name}</span></h1>
       </div>
     </div>
   );
