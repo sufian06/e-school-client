@@ -1,4 +1,4 @@
-# e-School - Learning Platform Assignment
+# e-School - Learning Platform
 
 ## [Client Side website](https://e-school-bc1e7.web.app/)
 
