@@ -14,7 +14,7 @@ import "./Header.css";
 const Header = () => {
   const [dark, setDark] = useState(false);
   let [open, setOpen] = useState(false);
-  const { user, loading, logOut } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
 
   if (open === true) {
     <FaBars />;

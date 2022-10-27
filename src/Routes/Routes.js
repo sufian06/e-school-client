@@ -28,14 +28,24 @@ export const routes = createBrowserRouter([
       },
       {
         path: "/course/:name",
-        element: <PrivateRoute><Course /></PrivateRoute>,
-        loader: ({params}) => fetch(`https://e-school-server.vercel.app/course/${params.name}`),
+        element: <Course />,
+        loader: ({ params }) =>
+          fetch(`https://e-school-server.vercel.app/course/${params.name}`),
       },
       { path: "/faq", element: <FAQ /> },
       { path: "/blog", element: <Blog /> },
       { path: "/register", element: <Register /> },
       { path: "/login", element: <Login /> },
-      { path: "/checkout", element: <PrivateRoute><CheckOut /></PrivateRoute> },
+      {
+        path: "/checkout/:id",
+        element: (
+          <PrivateRoute>
+            <CheckOut />
+          </PrivateRoute>
+        ),
+        // loader: ({ params }) =>
+        //   fetch(`https://e-school-server.vercel.app/course/${params.id}`),
+      },
     ],
   },
 ]);

@@ -3,7 +3,7 @@ import './Blog.css';
 
 const Blog = () => {
   return (
-    <div className='container'>
+    <div className='container view'>
       <div className='question'>
         <h4><span>Question 1.</span>what is cors?</h4>
         <p><span>Answer:</span>Cross-origin resource sharing is a mechanism that allows restricted resources on a web page to be requested from another domain outside the domain from which the first resource was served. A web page may freely embed cross-origin images, stylesheets, scripts, iframes, and videos.</p>

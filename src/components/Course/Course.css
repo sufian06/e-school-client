@@ -7,6 +7,16 @@
   border-radius: 5px;
 }
 
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-pdf {
+  cursor: pointer;
+}
+
 .course-name {
   margin-bottom: 30px;
   color: #ff5722;

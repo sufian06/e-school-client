@@ -3,7 +3,7 @@ import React from 'react';
 const FAQ = () => {
   return (
     <div>
-      <div className='container'>
+      <div className='container view'>
       <div className='question'>
         <h4><span>Question 1.</span>What do you learn?</h4>
         <p><span>Answer:</span>You will learn HTML, CSS, javascript, React, node.js and express.js from here.</p>
