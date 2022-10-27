@@ -13,9 +13,23 @@
   align-items: center;
 }
 
-.btn-pdf {
+.btn-pdfDownload {
+  padding: 4px 6px;
+  background-color: #ff5722;
+  color: #fff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 18px;
   cursor: pointer;
+  transition: 0.3s;
 }
+.btn-pdfDownload:hover {
+  background-color: #ff7044;
+}
+
+/* .btn-pdf {
+  cursor: pointer;
+} */
 
 .course-name {
   margin-bottom: 30px;

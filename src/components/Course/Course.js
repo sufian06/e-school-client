@@ -17,8 +17,8 @@ const Course = () => {
           <h1 className="course-name">Course: {name}</h1>
           <Pdf targetRef={ref} filename="code-example.pdf">
             {({ toPdf }) => (
-              <button onClick={toPdf}>
-                <FaRegFilePdf />
+              <button className="btn-pdfDownload" onClick={toPdf}>
+                <FaRegFilePdf /> Download PDF
               </button>
             )}
           </Pdf>
