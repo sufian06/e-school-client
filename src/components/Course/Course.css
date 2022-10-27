@@ -51,12 +51,11 @@
 .btn-course {
   border: 1px solid #ff5722;
   display: block;
-  width: 100%;
   margin-top: 20px;
-  padding: 10px;
+
   background-color: #ff5722;
   font-size: 1.125rem;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -64,6 +63,9 @@
   color: #fff;
   text-decoration: none;
   transition: 0.3s;
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
 }
 .btn-course:hover {
   color: #ff5722;
